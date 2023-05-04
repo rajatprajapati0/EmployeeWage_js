@@ -6,19 +6,25 @@ const partTimeHour=4;
 const wagePerHour=20;
 let empHour=0;
 atendance =Math.floor(Math.random()*10)%3;
-
-switch(atendance)
+function getWorkingHour()
+{
+    switch(atendance)
     {
       case fullday: 
-                  empHour=fullTimeHour;
+                  return fullTimeHour;
             break;
       case Halfday: 
-                   empHour=partTimeHour;
+                   return partTimeHour;
             break; 
-     default: empHour;
+     default: return 0;
             break;
 
     }
+
+}
+empHour=getWorkingHour();
+
 let employeeDailyWage=empHour*wagePerHour;
 
 console.log("emp Daily Wage $"+employeeDailyWage);
+
