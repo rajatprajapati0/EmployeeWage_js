@@ -1,14 +1,24 @@
-const prsent =1;
+const fullday =1;
+const Halfday =2;
 
-let atendence =Math.floor(Math.random*10)%2;
+const fullTimeHour=8;
+const partTimeHour=4;
+const wagePerHour=20;
+let empHour=0;
+atendance =Math.floor(Math.random()*10)%3;
 
-if (prsent==atendance)
-{
-  console.log('Employee is prsent');
+switch(atendance)
+    {
+      case fullday: 
+                  empHour=fullTimeHour;
+            break;
+      case Halfday: 
+                   empHour=partTimeHour;
+            break; 
+     default: empHour;
+            break;
 
-}
-else
-{
-    console.log('Employee is absent');
+    }
+let employeeDailyWage=empHour*wagePerHour;
 
-}
+console.log("emp Daily Wage $"+employeeDailyWage);
